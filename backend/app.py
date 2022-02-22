@@ -7,7 +7,7 @@ import sys
 
 
 MODE = os.getenv('FLASK_ENV')
-DEV_SERVER_URL = 'http://localhost:3000/'
+DEV_SERVER_URL = 'https://lolesports-predictor.herokuapp.com/'
 
 app = Flask(__name__)
 
