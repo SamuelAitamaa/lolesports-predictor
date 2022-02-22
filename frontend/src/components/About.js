@@ -13,7 +13,7 @@ const About = () => {
             The model took each teams' strenghts based on 25 different statistics, such as <i>Win rate</i>, <i>CS per minute</i> and <i>Tower Differential @ 15</i>.
             It then learned what kind of statistics led to wins and losses based on their 
             match history results against different teams. The model was taught with all the regular season games from 2020 to 2022 February in <i>LEC</i>, <i>LCS</i> and <i>LCK</i>.
-            For more in-depth information about the model you can check out the Jupyter Notebook on my <a href="https://github.com/SamuelAitamaa" target="_blank">Github</a>.
+            For more in-depth information about the model you can check out the Jupyter Notebook on my <a href="https://github.com/SamuelAitamaa/lolesports-predictor/blob/main/model-notebook/modelNotebook.ipynb" target="_blank">Github</a>.
             <br></br><br></br>
             The predictor then takes the teams' current strenghts and applies the learned methods to predict probabilities
             between two teams. It works based on the averages of the whole split and does not take into account
