@@ -30,3 +30,6 @@ def get_query_from_react():
     result = predict(data.get("team1"), data.get("team2"), data.get("region"))
     sys.stdout.flush()
     return result
+
+if __name__=='__main__': 
+    app.run()
