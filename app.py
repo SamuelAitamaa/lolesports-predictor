@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
-from reverseProxy import proxyRequest
 from classifier import predict
 import time
 import sys
