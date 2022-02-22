@@ -61,7 +61,7 @@ function handleRegionChange(event) {
 
 function renderPredictions() {
   if ((props.region != null && props.team1 != null && props.team2 != null) && checkForms()) {
-      axios.post('/', teams)
+      axios.post('https://lolesports-predictor.herokuapp.com/', teams)
               .then(function(response){
                   setTeam1Probability(response.data[teams.team1])
                   setTeam2Probability(response.data[teams.team2])
