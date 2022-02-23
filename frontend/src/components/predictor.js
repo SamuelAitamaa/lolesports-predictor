@@ -33,11 +33,11 @@ function importAll(r) {
   }
 
   function checkForms() {
-    if (teams.region === "LEC" && lecTeams.includes(teams.team1) && lecTeams.includes(teams.team2)) {
+    if (teams.region === "LEC" && lecTeams.includes(teams.team1) && lecTeams.includes(teams.team2) && (teams.team2 !== teams.team1)) {
       return true
-    } else if (teams.region === "LCS" && lcsTeams.includes(teams.team1) && lcsTeams.includes(teams.team2)) {
+    } else if (teams.region === "LCS" && lcsTeams.includes(teams.team1) && lcsTeams.includes(teams.team2) && (teams.team2 !== teams.team1)) {
       return true
-    } else if (teams.region === "LCK" && lckTeams.includes(teams.team1) && lckTeams.includes(teams.team2)) {
+    } else if (teams.region === "LCK" && lckTeams.includes(teams.team1) && lckTeams.includes(teams.team2) && (teams.team2 !== teams.team1)) {
       return true
     } else {
       return false
@@ -63,8 +63,8 @@ function renderPredictions() {
   if ((props.region != null && props.team1 != null && props.team2 != null) && checkForms()) {
       axios.post('/api', teams)
               .then(function(response){
-                  setTeam1Probability(response.data[teams.team1])
-                  setTeam2Probability(response.data[teams.team2])
+                  setTeam1Probability(response.data[teams.team1] * 100)
+                  setTeam2Probability(response.data[teams.team2] * 100)
           })
           .catch(function(error){
               console.log(error);
@@ -82,7 +82,7 @@ function renderPredictions() {
               <div>
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam1Name(event.value)} placeholder="Select blue team" /></div>
                 <img src={images[`${teams.team1}.png`]}></img>
-                <h1 style={{color: team1Color}}>{(team1Probability * 100).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team1 }</h1>
+                <h1 style={{color: team1Color}}>{(team1Probability).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team1 }</h1>
               </div>
 
               <div id="region">
@@ -93,7 +93,7 @@ function renderPredictions() {
               <div>
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
                 <img src={images[`${teams.team2}.png`]}></img>
-                <h1 style={{color: team2Color}}>{(team2Probability * 100).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team2}</h1>
+                <h1 style={{color: team2Color}}>{(team2Probability).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team2}</h1>
               </div>
             </div>
           )
