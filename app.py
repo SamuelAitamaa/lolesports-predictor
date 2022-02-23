@@ -10,7 +10,7 @@ app = Flask(__name__, static_folder='frontend/build',static_url_path='')
 cors = CORS(app)
 
 
-@app.route('/', methods = ['POST'])
+@app.route('/api', methods = ['POST'])
 @cross_origin()
 def get_query_from_react():
     data = request.get_json()
