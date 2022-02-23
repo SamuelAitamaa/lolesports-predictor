@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
+from flask.helpers import send_from_directory
 from classifier import predict
 import time
 import sys
@@ -9,6 +10,9 @@ import sys
 app = Flask(__name__, static_folder='frontend/build',static_url_path='')
 cors = CORS(app)
 
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api', methods = ['POST'])
 @cross_origin()
