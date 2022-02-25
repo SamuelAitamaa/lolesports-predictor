@@ -39,9 +39,11 @@ def predict(team1, team2, region):
     predictionsData = predictionsData.astype(float)
 
     predictions = model.predict(predictionsData)
+    team1Result = predictions[0][0]
+    team2Result = (1 -predictions[0][0])
     result = {
-        team1: str(predictions[0][0]),
-        team2: str(predictions[0][1]),
+        team1: str(team1Result),
+        team2: str(team2Result),
     }
 
     return result
