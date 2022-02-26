@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8b01bdd0.css",
-    "main.js": "/static/js/main.e2f9fd84.js",
+    "main.js": "/static/js/main.985c1bbd.js",
     "static/media/banner.png": "/static/media/banner.54059360696649585273.png",
     "static/media/Liiv SANDBOX.png": "/static/media/Liiv SANDBOX.0fdc337ff4a29f42e6a9.png",
     "static/media/Misfits Gaming.png": "/static/media/Misfits Gaming.294364b1111ee8ada0d8.png",
@@ -12,10 +12,10 @@
     "static/media/MAD Lions.png": "/static/media/MAD Lions.16f74e63486aa1ae8bc8.png",
     "index.html": "/index.html",
     "main.8b01bdd0.css.map": "/static/css/main.8b01bdd0.css.map",
-    "main.e2f9fd84.js.map": "/static/js/main.e2f9fd84.js.map"
+    "main.985c1bbd.js.map": "/static/js/main.985c1bbd.js.map"
   },
   "entrypoints": [
     "static/css/main.8b01bdd0.css",
-    "static/js/main.e2f9fd84.js"
+    "static/js/main.985c1bbd.js"
   ]
 }

@@ -24,7 +24,7 @@ const About = () => {
             The predictor needs to be manually updated every split to use the team data for the ongoing split. I will update on the bottom of this page whenever I have updated
             it.<br></br><br></br>
 
-            The model gives around 70% accuracy and 70% recall without overfitting, being pretty much the same what an average active watcher gets
+            The model gives around 70% accuracy and 80% recall without overfitting, being pretty much the same what an average active watcher gets
             (based on <a href="https://www.twitch.tv/iwilldominate" target="_blank">IWDominate's</a> and his viewers' predictions).
             It could most likely be improved by adding more information, but I decided to leave it as such for now.<br></br><br></br>
 

@@ -113,7 +113,9 @@ function renderPredictions() {
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
               </div>
             </div>
-      <h2 style={{color: "white", marginTop: "5%"}}>Select region, blue team and red team to get a prediction</h2>
+      {teams.team2 === teams.team1 ?
+      <h2 style={{color: "white", marginTop: "5%"}}>Teams must be different to predict</h2> :
+      <h2 style={{color: "white", marginTop: "5%"}}>Select region, blue team and red team to get a prediction</h2>}
     </>
     )
   }
