@@ -59,6 +59,20 @@ function handleRegionChange(event) {
     props.setRegion(event.value)
 }
 
+const errorMessages = () => {
+  let dropDownsFilled = (props.team1 !== null && props.team2 !== null && props.region !== null)
+  let sameTeam = (!checkForms() && dropDownsFilled && teams.team2 === teams.team1)
+  let crossRegionAttempt = (!checkForms() && dropDownsFilled && (!options.includes(teams.team1) || !options.includes(teams.team2)))
+
+  if (sameTeam) {
+    return  <h2 style={{color: "white", marginTop: "5%"}}>Teams must be different to predict</h2>
+  } else if (crossRegionAttempt) {
+    return <h2 style={{color: "white", marginTop: "5%"}}>Select teams from {props.region}</h2>
+  } else {
+    return <h2 style={{color: "white", marginTop: "5%"}}>Select region, blue team and red team to get a prediction</h2>
+  }
+}
+
 function renderPredictions() {
   if ((props.region != null && props.team1 != null && props.team2 != null) && checkForms()) {
       axios.post('/api', teams)
@@ -112,11 +126,9 @@ function renderPredictions() {
               <div id="teamTwo">
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
               </div>
-            </div>
-      {teams.team2 === teams.team1 ?
-      <h2 style={{color: "white", marginTop: "5%"}}>Teams must be different to predict</h2> :
-      <h2 style={{color: "white", marginTop: "5%"}}>Select region, blue team and red team to get a prediction</h2>}
-    </>
+          </div>
+        { errorMessages() }
+        </>
     )
   }
 }
