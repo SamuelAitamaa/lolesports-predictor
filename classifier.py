@@ -5,12 +5,13 @@ import pandas as pd
 import requests
 import os
 
+model = load_model("model")
+
 def get_sec(time_str):
     m, s = time_str.split(':')
-    return float(3600 + int(m) * 60 + int(s))
+    return float(60 * int(m) + int(s))
 
 def predict(team1, team2, region):
-    model = load_model("model")
     url=''
     if region == "LEC":
         url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LEC%20Spring%202022/'
@@ -36,9 +37,12 @@ def predict(team1, team2, region):
     predictionsData = predictionsData.astype(float)
 
     predictions = model.predict(predictionsData)
+    team1Result = predictions[0][0]
+    team2Result = (1 -predictions[0][0])
+
     result = {
-        team1: str(predictions[0][0]),
-        team2: str(predictions[0][1]),
+        team1: str(team1Result),
+        team2: str(team2Result),
     }
 
     return result
