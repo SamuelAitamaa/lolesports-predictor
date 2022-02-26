@@ -11,9 +11,7 @@ def get_sec(time_str):
     return float(3600 + int(m) * 60 + int(s))
 
 def predict(team1, team2, region):
-    path = str(pathlib.Path(__file__).parent.resolve())
-    path = path + '\model'
-    model = load_model("frontend/model")
+    model = load_model("frontend/predictor")
     url=''
     if region == "LEC":
         url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LEC%20Spring%202022/'
