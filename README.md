@@ -20,6 +20,6 @@ More detailed descriptions of the machine learning you can find in my [Notebook]
 
 ## Project aims
 
-The aim of this project was not only to predict the winners but also strenghten my own data preprocessing and machine learning skills with Python, as well as learning how to deploy and manage apps with Heroku and Flask. I also made a graphical user interface with React for the final model which I will publish on Heroku.
+The aim of this project was not only to predict the winners but also strenghten my own data preprocessing and machine learning skills with Python, as well as learning how to deploy and manage apps with Heroku and Flask.
 
 I do not recommend to use the model for betting, but if you decided to do so let me know how you did!
