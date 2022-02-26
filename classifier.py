@@ -11,7 +11,7 @@ def get_sec(time_str):
     return float(3600 + int(m) * 60 + int(s))
 
 def predict(team1, team2, region):
-    model = load_model("frontend/predictor")
+    model = load_model("frontend/model")
     url=''
     if region == "LEC":
         url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LEC%20Spring%202022/'
@@ -38,7 +38,7 @@ def predict(team1, team2, region):
 
     predictions = model.predict(predictionsData)
     team1Result = predictions[0][0]
-    team2Result = (1 -predictions[0][0])
+    team2Result = (1-predictions[0][0])
     result = {
         team1: str(team1Result),
         team2: str(team2Result),
