@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.8b01bdd0.css",
-    "main.js": "/static/js/main.e345c125.js",
+    "main.js": "/static/js/main.27ae49d9.js",
     "static/media/banner.png": "/static/media/banner.54059360696649585273.png",
     "static/media/Liiv SANDBOX.png": "/static/media/Liiv SANDBOX.0fdc337ff4a29f42e6a9.png",
     "static/media/Misfits Gaming.png": "/static/media/Misfits Gaming.294364b1111ee8ada0d8.png",
     "static/media/Team Liquid.png": "/static/media/Team Liquid.9f6f660b75f39f5c8805.png",
-    "static/media/100 Thieves.png": "/static/media/100 Thieves.cdec6720ac6038a4a506.png",
     "static/media/Fredit BRION.png": "/static/media/Fredit BRION.ab7ebb0f4a2a14bc8400.png",
     "static/media/Kwangdong Freecs.png": "/static/media/Kwangdong Freecs.cad0a8c0ec8194f10823.png",
     "static/media/G2 Esports.png": "/static/media/G2 Esports.0fc6635e8a3891e18a8c.png",
     "static/media/MAD Lions.png": "/static/media/MAD Lions.16f74e63486aa1ae8bc8.png",
+    "static/media/100 Thieves.png": "/static/media/100 Thieves.830f710f23441ab08ae7.png",
     "index.html": "/index.html",
     "main.8b01bdd0.css.map": "/static/css/main.8b01bdd0.css.map",
-    "main.e345c125.js.map": "/static/js/main.e345c125.js.map"
+    "main.27ae49d9.js.map": "/static/js/main.27ae49d9.js.map"
   },
   "entrypoints": [
     "static/css/main.8b01bdd0.css",
-    "static/js/main.e345c125.js"
+    "static/js/main.27ae49d9.js"
   ]
 }
