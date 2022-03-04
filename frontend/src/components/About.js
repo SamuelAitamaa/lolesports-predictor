@@ -21,16 +21,11 @@ const About = () => {
             the model will also make more reliable predictions towards the end of the season. It does not know if any sudden roster swaps or other outside of the game
             events occur.<br></br><br></br>
 
-            The predictor needs to be manually updated every split to use the team data for the ongoing split. I will update on the bottom of this page whenever I have updated
-            it.<br></br><br></br>
-
             The model gives around 70% accuracy and 80% recall without overfitting, being pretty much the same what an average active watcher gets
             (based on <a href="https://www.twitch.tv/iwilldominate" target="_blank">IWDominate's</a> and his viewers' predictions).
             It could most likely be improved by adding more information, but I decided to leave it as such for now.<br></br><br></br>
 
             I do not recommend to use the model for betting, but if you decided to do so let me know how you did!<br></br><br></br>
-
-            Updated: <u>Spring 2022</u>
         </div>
         <Header />
     </div>

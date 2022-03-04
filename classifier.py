@@ -3,9 +3,39 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from tensorflow.keras.models import load_model
 import pandas as pd
 import requests
+import urllib
+import urllib.request
+from http.cookiejar import CookieJar
+import bs4
 import os
 
 model = load_model("model")
+
+def getYearAndSplit():
+    try:
+        req=urllib.request.Request("https://gol.gg/esports/home/", None, {'User-Agent': 'your bot 0.1'})
+        cj = CookieJar()
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+        response = opener.open(req)
+        raw_response = response.read().decode('utf8', errors='ignore')
+        soup = bs4.BeautifulSoup(raw_response)
+        for a in soup.find_all('a', string="Teams", href=True):
+            url = a['href']
+        response.close()
+    except urllib.request.HTTPError as inst:
+        output = format(inst)
+        print(output)
+
+    splittedUrl = url.split('/')
+    season = splittedUrl[3]
+    split = splittedUrl[4]
+
+    year = int(season.split('-')[1][1:]) + 10
+    split = split.split('-')[1]
+
+    return year, split
+
+year, split = getYearAndSplit()
 
 def get_sec(time_str):
     m, s = time_str.split(':')
@@ -14,11 +44,11 @@ def get_sec(time_str):
 def predict(team1, team2, region):
     url=''
     if region == "LEC":
-        url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LEC%20Spring%202022/'
+        url = f'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LEC%20{split}%2020{year}/'
     if region == "LCS":
-        url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LCS%20Spring%202022/'
+        url = f'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LCS%20{split}%2020{year}/'
     if region == "LCK":
-        url = 'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LCK%20Spring%202022/'
+        url = f'https://gol.gg/teams/list/season-ALL/split-ALL/tournament-LCK%20{split}%2020{year}/'
 
     data = pd.read_html(requests.get(url, headers={'User-agent': 'your bot 0.1'}).text)[1]
 
