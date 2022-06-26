@@ -63,7 +63,7 @@ def predict(team1, team2, region):
     teamTwo = data[data["Name"] == team2]
 
     predictionsData = pd.merge(teamOne, teamTwo, left_on="Region", right_on="Region")
-    predictionsData = predictionsData.drop(columns=['Name_x', 'Name_y', 'Region'])
+    predictionsData = predictionsData.drop(columns=['Name_x', 'Name_y', 'Region', 'PPG_y', 'PPG_x'])
     predictionsData = predictionsData.astype(float)
 
     predictions = model.predict(predictionsData)

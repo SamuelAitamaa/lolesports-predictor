@@ -14,7 +14,7 @@ const Home = () => {
     <div id="mainContainer">
       <img src={banner}></img>
       <div id="contentContainer">
-        <Predictor team1={team1Name} team2={team2Name} region={region} setRegion={setRegion} region={region} setTeam1Name={setTeam1Name} setTeam2Name={setTeam2Name}/>
+        <Predictor team1={team1Name} team2={team2Name} region={region} setRegion={setRegion} setTeam1Name={setTeam1Name} setTeam2Name={setTeam2Name}/>
       </div>
     </div>
     <Header />

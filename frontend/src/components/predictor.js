@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
+import AnimatedNumber from 'react-animated-number';
 
 const regions = ['LEC', 'LCS', 'LCK']
 const lecTeams = ['Astralis', 'Excel Esports', 'Fnatic', 'G2 Esports', 'MAD Lions', 'Misfits Gaming', 'Rogue', 'SK Gaming', 'Team BDS', 'Team Vitality']
@@ -59,6 +60,12 @@ function handleRegionChange(event) {
     props.setRegion(event.value)
 }
 
+const animatedNumbers = (value) => {
+  return (
+    <AnimatedNumber value={value} formatValue={value => `${value.toFixed(2)}`} duration={1000}/>
+  )
+}
+
 const errorMessages = () => {
   let dropDownsFilled = (props.team1 !== null && props.team2 !== null && props.region !== null)
   let sameTeam = (!checkForms() && dropDownsFilled && teams.team2 === teams.team1)
@@ -96,7 +103,7 @@ function renderPredictions() {
               <div>
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam1Name(event.value)} placeholder="Select blue team" /></div>
                 <img src={images[`${teams.team1}.png`]}></img>
-                <h1 style={{color: team1Color}}>{(team1Probability).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team1 }</h1>
+                <h1 style={{color: team1Color}}> { animatedNumbers(team1Probability) }% </h1><h1 style={{color: "white"}}>{teams.team1}</h1>
               </div>
 
               <div id="region">
@@ -107,7 +114,7 @@ function renderPredictions() {
               <div>
               <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
                 <img src={images[`${teams.team2}.png`]}></img>
-                <h1 style={{color: team2Color}}>{(team2Probability).toFixed(2)}%</h1> <h1 style={{color: "white"}}>{teams.team2}</h1>
+                <h1 style={{color: team2Color}}> { animatedNumbers(team2Probability) }% </h1><h1 style={{color: "white"}}>{teams.team2}</h1>
               </div>
             </div>
           )
