@@ -18,6 +18,9 @@ const Predictor = (props) => {
   const [team1Probability, setTeam1Probability] = useState(0);
   const [team2Probability, setTeam2Probability] = useState(0);
 
+  const [team1IsDisabled, setTeam1IsDisabled] = useState("hidden");
+  const [team2IsDisabled, setTeam2IsDisabled] = useState("hidden");
+
   let images;
   if (props.region === "LEC") {
     images = importAll(require.context('../img/LEC', false, /\.(png|jpe?g|svg)$/));
@@ -58,6 +61,8 @@ function importAll(r) {
 
 function handleRegionChange(event) {
     props.setRegion(event.value)
+    setTeam1IsDisabled("visible")
+    setTeam2IsDisabled("visible")
 }
 
 const animatedNumbers = (value) => {
@@ -123,7 +128,7 @@ function renderPredictions() {
       <>
       <div id="teams" style={{display: "flex", justifyContent: "center"}}>
               <div id="teamOne">
-              <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam1Name(event.value)} placeholder="Select blue team" /></div>
+              <div id="dropdown" style={{ visibility: team1IsDisabled}}><Dropdown options={options} onChange={event => props.setTeam1Name(event.value)} placeholder="Select blue team" /></div>
               </div>
 
               <div id="region">
@@ -131,7 +136,7 @@ function renderPredictions() {
               </div>
 
               <div id="teamTwo">
-              <div id="dropdown"><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
+              <div id="dropdown" style={{ visibility: team2IsDisabled}}><Dropdown options={options} onChange={event => props.setTeam2Name(event.value)} placeholder="Select red team" /></div>
               </div>
           </div>
         { errorMessages() }

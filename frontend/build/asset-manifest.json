@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8b01bdd0.css",
-    "main.js": "/static/js/main.f264178c.js",
+    "main.js": "/static/js/main.15c797ff.js",
     "static/media/banner.png": "/static/media/banner.54059360696649585273.png",
     "static/media/Liiv SANDBOX.png": "/static/media/Liiv SANDBOX.0fdc337ff4a29f42e6a9.png",
     "static/media/Misfits Gaming.png": "/static/media/Misfits Gaming.294364b1111ee8ada0d8.png",
@@ -13,10 +13,10 @@
     "static/media/100 Thieves.png": "/static/media/100 Thieves.830f710f23441ab08ae7.png",
     "index.html": "/index.html",
     "main.8b01bdd0.css.map": "/static/css/main.8b01bdd0.css.map",
-    "main.f264178c.js.map": "/static/js/main.f264178c.js.map"
+    "main.15c797ff.js.map": "/static/js/main.15c797ff.js.map"
   },
   "entrypoints": [
     "static/css/main.8b01bdd0.css",
-    "static/js/main.f264178c.js"
+    "static/js/main.15c797ff.js"
   ]
 }
